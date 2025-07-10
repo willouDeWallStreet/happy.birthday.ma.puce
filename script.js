@@ -5,19 +5,43 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('canvas-container').appendChild(renderer.domElement);
 
-// Ajout d'un cube
-const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
+// Chargement des textures
+const textureLoader = new THREE.TextureLoader();
 
-camera.position.z = 5;
+// Remplacez les URLs par les chemins de vos images
+const textureLogement1 = textureLoader.load('https://example.com/path-to-image1.jpg');
+const textureLogement2 = textureLoader.load('https://example.com/path-to-image2.jpg');
+const textureParc = textureLoader.load('https://example.com/path-to-image3.jpg');
+const textureVille = textureLoader.load('https://example.com/path-to-image4.jpg');
+
+// Création des plans pour afficher les images
+const geometry = new THREE.PlaneGeometry(5, 5);
+const materialLogement1 = new THREE.MeshBasicMaterial({ map: textureLogement1 });
+const materialLogement2 = new THREE.MeshBasicMaterial({ map: textureLogement2 });
+const materialParc = new THREE.MeshBasicMaterial({ map: textureParc });
+const materialVille = new THREE.MeshBasicMaterial({ map: textureVille });
+
+const logement1 = new THREE.Mesh(geometry, materialLogement1);
+const logement2 = new THREE.Mesh(geometry, materialLogement2);
+const parc = new THREE.Mesh(geometry, materialParc);
+const ville = new THREE.Mesh(geometry, materialVille);
+
+// Positionnement des plans dans la scène
+logement1.position.x = -10;
+logement2.position.x = -5;
+parc.position.x = 5;
+ville.position.x = 10;
+
+scene.add(logement1);
+scene.add(logement2);
+scene.add(parc);
+scene.add(ville);
+
+camera.position.z = 15;
 
 // Animation
 function animate() {
     requestAnimationFrame(animate);
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
     renderer.render(scene, camera);
 }
 
