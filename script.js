@@ -1,3 +1,4 @@
+
 // Initialisation de la scène, de la caméra et du rendu
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -8,11 +9,11 @@ document.getElementById('canvas-container').appendChild(renderer.domElement);
 // Chargement des textures
 const textureLoader = new THREE.TextureLoader();
 
-// Remplacez les URLs par les chemins de vos images
-const textureLogement1 = textureLoader.load('https://example.com/path-to-image1.jpg');
-const textureLogement2 = textureLoader.load('https://example.com/path-to-image2.jpg');
-const textureParc = textureLoader.load('https://example.com/path-to-image3.jpg');
-const textureVille = textureLoader.load('https://example.com/path-to-image4.jpg');
+// Images de Nancy
+const textureLogement1 = textureLoader.load('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/0c/da/ef/photo2jpg.jpg?w=500&h=400&s=1');
+const textureLogement2 = textureLoader.load('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f6/ef/73/default-avatar-2020-13.jpg?w=500&h=400&s=1');
+const textureParc = textureLoader.load('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/06/0f/75/dominique-alexandre-godron.jpg?w=500&h=400&s=1');
+const textureVille = textureLoader.load('https://www.nancy.fr/fileadmin/_processed_/0/2/csm_2024-ici-on-respire_d0a2b8c408.png');
 
 // Création des plans pour afficher les images
 const geometry = new THREE.PlaneGeometry(5, 5);
