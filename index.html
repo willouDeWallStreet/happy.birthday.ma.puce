@@ -4,18 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joyeux Anniversaire, Ludivine!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Utilisation de polices similaires disponibles sur Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            background-color: black;
+            color: white;
         }
 
-        .gradient-text {
+        .title-font {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            line-height: 60px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0);
             background: linear-gradient(to right, #FF99C8, #FFFFFF);
             -webkit-background-clip: text;
             background-clip: text;
-            color: transparent;
+        }
+
+        .subtitle-font {
+            font-family: 'Roboto', sans-serif;
+            font-size: 32px;
+            line-height: 36px;
+            font-weight: 600;
+            color: rgb(206, 206, 206);
         }
 
         .fade-in-section {
@@ -36,46 +51,46 @@
         }
     </style>
 </head>
-<body class="bg-black text-white">
+<body>
 <!-- Section 1: Introduction -->
 <section class="min-h-screen flex flex-col items-center justify-center p-4">
-    <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold mb-4 gradient-text text-center">Joyeux Anniversaire, ma Puce!</h1>
-    <p class="text-lg md:text-xl lg:text-2xl mb-8 text-center max-w-lg fade-in-section is-visible">Bienvenue sur cette page spéciale pour toi, Ludivine. Découvre ce que j'ai préparé pour ton anniversaire.</p>
+    <h1 class="title-font text-center">Joyeux Anniversaire, ma Puce!</h1>
+    <p class="subtitle-font text-center max-w-lg fade-in-section is-visible">Bienvenue sur cette page spéciale pour toi, Ludivine. Découvre ce que j'ai préparé pour ton anniversaire.</p>
 </section>
 
 <div class="separator"></div>
 
 <!-- Section 2: Danse et Ballets -->
 <section class="min-h-screen flex flex-col items-center justify-center p-4">
-    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 gradient-text text-center">Danse et Ballets</h2>
-    <p class="text-base md:text-lg lg:text-xl mb-8 text-center max-w-lg fade-in-section">Tu aimes la danse et les ballets, et c'est une passion qui te rend unique et élégante.</p>
-    <img src="https://example.com/path-to-danse.jpg" alt="Danse" class="mx-auto rounded-lg shadow-lg max-w-xs md:max-w-sm lg:max-w-lg slide-in">
+    <h2 class="title-font text-center">Danse et Ballets</h2>
+    <p class="subtitle-font text-center max-w-lg fade-in-section">Tu aimes la danse et les ballets, et c'est une passion qui te rend unique et élégante.</p>
+    <img src="https://example.com/path-to-danse.jpg" alt="Danse" class="mx-auto rounded-lg shadow-lg max-w-xs md:max-w-sm lg:max-w-lg">
 </section>
 
 <div class="separator"></div>
 
 <!-- Section 3: Voyages et Festivals -->
 <section class="min-h-screen flex flex-col items-center justify-center p-4">
-    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 gradient-text text-center">Voyages et Festivals</h2>
-    <p class="text-base md:text-lg lg:text-xl mb-8 text-center max-w-lg fade-in-section">Ensemble, nous avons exploré des festivals incroyables comme le Brunch Electronique et l'Initial Festival à Bordeaux. Tes rires et ton amour pour la musique techno ont rendu ces moments inoubliables.</p>
-    <img src="https://example.com/path-to-festival.jpg" alt="Festival" class="mx-auto rounded-lg shadow-lg max-w-xs md:max-w-sm lg:max-w-lg slide-in">
+    <h2 class="title-font text-center">Voyages et Festivals</h2>
+    <p class="subtitle-font text-center max-w-lg fade-in-section">Ensemble, nous avons exploré des festivals incroyables comme le Brunch Electronique et l'Initial Festival à Bordeaux. Tes rires et ton amour pour la musique techno ont rendu ces moments inoubliables.</p>
+    <img src="https://example.com/path-to-festival.jpg" alt="Festival" class="mx-auto rounded-lg shadow-lg max-w-xs md:max-w-sm lg:max-w-lg">
 </section>
 
 <div class="separator"></div>
 
 <!-- Section 4: Art et Rires -->
 <section class="min-h-screen flex flex-col items-center justify-center p-4">
-    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 gradient-text text-center">Art et Rires</h2>
-    <p class="text-base md:text-lg lg:text-xl mb-8 text-center max-w-lg fade-in-section">Ton amour pour l'art et ta capacité à trouver la joie dans chaque moment nous inspirent tous les jours.</p>
-    <img src="https://example.com/path-to-art.jpg" alt="Art" class="mx-auto rounded-lg shadow-lg max-w-xs md:max-w-sm lg:max-w-lg slide-in">
+    <h2 class="title-font text-center">Art et Rires</h2>
+    <p class="subtitle-font text-center max-w-lg fade-in-section">Ton amour pour l'art et ta capacité à trouver la joie dans chaque moment nous inspirent tous les jours.</p>
+    <img src="https://example.com/path-to-art.jpg" alt="Art" class="mx-auto rounded-lg shadow-lg max-w-xs md:max-w-sm lg:max-w-lg">
 </section>
 
 <div class="separator"></div>
 
 <!-- Section 5: Conclusion -->
 <section class="min-h-screen flex flex-col items-center justify-center p-4">
-    <h1 class="text-2xl md:text-3xl lg:text-5xl font-bold mb-4 gradient-text text-center">Merci d'être toi</h1>
-    <p class="text-base md:text-lg lg:text-xl mb-8 text-center max-w-lg fade-in-section">Pour tout l'amour, les rires et les aventures que tu apportes dans ma vie. Joyeux anniversaire, ma Puce!</p>
+    <h1 class="title-font text-center">Merci d'être toi</h1>
+    <p class="subtitle-font text-center max-w-lg fade-in-section">Pour tout l'amour, les rires et les aventures que tu apportes dans ma vie. Joyeux anniversaire, ma Puce!</p>
 </section>
 
 <script>
