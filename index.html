@@ -18,71 +18,85 @@
             color: transparent;
         }
 
-        .fade-in {
+        .fade-in-section {
             opacity: 0;
-            animation: fadeIn 2s ease-in forwards;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
         }
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .slide-in {
-            transform: translateY(50px);
-            opacity: 0;
-            animation: slideIn 2s ease-out forwards;
-        }
-
-        @keyframes slideIn {
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+        .separator {
+            height: 1px;
+            background: linear-gradient(to right, transparent, white, transparent);
+            margin: 4rem auto;
         }
     </style>
 </head>
 <body class="bg-black text-white">
 <!-- Section 1: Introduction -->
 <section class="h-screen flex flex-col items-center justify-center">
-    <h1 class="text-5xl font-bold mb-4 gradient-text">Joyeux Anniversaire, ma Puce!</h1>
-    <p class="text-2xl mb-8 text-center max-w-lg fade-in">Bienvenue sur cette page spéciale pour toi, Ludivine. Découvre ce que j'ai préparé pour ton anniversaire.</p>
+    <h1 class="text-7xl font-bold mb-4 gradient-text">Joyeux Anniversaire, ma Puce!</h1>
+    <p class="text-2xl mb-8 text-center max-w-lg fade-in-section is-visible">Bienvenue sur cette page spéciale pour toi, Ludivine. Découvre ce que j'ai préparé pour ton anniversaire.</p>
 </section>
 
-<div class="w-full h-px bg-white my-8"></div>
+<div class="separator"></div>
 
 <!-- Section 2: Danse et Ballets -->
 <section class="h-screen flex flex-col items-center justify-center">
     <h2 class="text-4xl font-bold mb-4 gradient-text">Danse et Ballets</h2>
-    <p class="text-xl mb-8 text-center max-w-lg fade-in">Tu aimes la danse et les ballets, et c'est une passion qui te rend unique et élégante.</p>
-    <img src="https://example.com/path-to-danse.jpg" alt="Danse" class="mx-auto rounded-lg shadow-lg slide-in max-w-lg">
+    <p class="text-xl mb-8 text-center max-w-lg fade-in-section">Tu aimes la danse et les ballets, et c'est une passion qui te rend unique et élégante.</p>
+    <img src="https://example.com/path-to-danse.jpg" alt="Danse" class="mx-auto rounded-lg shadow-lg max-w-lg">
 </section>
 
-<div class="w-full h-px bg-white my-8"></div>
+<div class="separator"></div>
 
 <!-- Section 3: Voyages et Festivals -->
 <section class="h-screen flex flex-col items-center justify-center">
     <h2 class="text-4xl font-bold mb-4 gradient-text">Voyages et Festivals</h2>
-    <p class="text-xl mb-8 text-center max-w-lg fade-in">Ensemble, nous avons exploré des festivals incroyables comme le Brunch Electronique et l'Initial Festival à Bordeaux. Tes rires et ton amour pour la musique techno ont rendu ces moments inoubliables.</p>
-    <img src="https://example.com/path-to-festival.jpg" alt="Festival" class="mx-auto rounded-lg shadow-lg slide-in max-w-lg">
+    <p class="text-xl mb-8 text-center max-w-lg fade-in-section">Ensemble, nous avons exploré des festivals incroyables comme le Brunch Electronique et l'Initial Festival à Bordeaux. Tes rires et ton amour pour la musique techno ont rendu ces moments inoubliables.</p>
+    <img src="https://example.com/path-to-festival.jpg" alt="Festival" class="mx-auto rounded-lg shadow-lg max-w-lg">
 </section>
 
-<div class="w-full h-px bg-white my-8"></div>
+<div class="separator"></div>
 
 <!-- Section 4: Art et Rires -->
 <section class="h-screen flex flex-col items-center justify-center">
     <h2 class="text-4xl font-bold mb-4 gradient-text">Art et Rires</h2>
-    <p class="text-xl mb-8 text-center max-w-lg fade-in">Ton amour pour l'art et ta capacité à trouver la joie dans chaque moment nous inspirent tous les jours.</p>
-    <img src="https://example.com/path-to-art.jpg" alt="Art" class="mx-auto rounded-lg shadow-lg slide-in max-w-lg">
+    <p class="text-xl mb-8 text-center max-w-lg fade-in-section">Ton amour pour l'art et ta capacité à trouver la joie dans chaque moment nous inspirent tous les jours.</p>
+    <img src="https://example.com/path-to-art.jpg" alt="Art" class="mx-auto rounded-lg shadow-lg max-w-lg">
 </section>
 
-<div class="w-full h-px bg-white my-8"></div>
+<div class="separator"></div>
 
 <!-- Section 5: Conclusion -->
 <section class="h-screen flex flex-col items-center justify-center">
     <h1 class="text-5xl font-bold mb-4 gradient-text">Merci d'être toi</h1>
-    <p class="text-2xl mb-8 text-center max-w-lg fade-in">Pour tout l'amour, les rires et les aventures que tu apportes dans ma vie. Joyeux anniversaire, ma Puce!</p>
+    <p class="text-xl mb-8 text-center max-w-lg fade-in-section">Pour tout l'amour, les rires et les aventures que tu apportes dans ma vie. Joyeux anniversaire, ma Puce!</p>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const fadeInSections = document.querySelectorAll('.fade-in-section');
+
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        fadeInSections.forEach(section => {
+            appearOnScroll.observe(section);
+        });
+    });
+</script>
 </body>
 </html>
