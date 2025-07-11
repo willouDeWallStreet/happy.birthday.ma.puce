@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joyeux Anniversaire, Ludivine!</title>
-    <!-- Utilisation de polices similaires disponibles sur Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
@@ -49,9 +48,37 @@
             background: linear-gradient(to right, transparent, white, transparent);
             margin: 2rem auto;
         }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            height: 400px; /* Fixed height for the carousel */
+        }
+
+        .carousel-inner {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Ensures images maintain their aspect ratio */
+        }
     </style>
 </head>
 <body>
+<!-- Sections remain unchanged -->
 <!-- Section 1: Introduction -->
 <section class="min-h-screen flex flex-col items-center justify-center p-4">
     <h1 class="title-font text-center">Joyeux Anniversaire, ma Puce!</h1>
@@ -64,7 +91,6 @@
 <section class="min-h-screen flex flex-col items-center justify-center p-4">
     <h2 class="title-font text-center">Danse et Ballets</h2>
     <p class="subtitle-font text-center max-w-lg fade-in-section">Tu aimes la danse et les ballets, et c'est une passion qui te rend unique et élégante.</p>
-    <img src="https://example.com/path-to-danse.jpg" alt="Danse" class="mx-auto rounded-lg shadow-lg max-w-xs md:max-w-sm lg:max-w-lg">
 </section>
 
 <div class="separator"></div>
@@ -73,7 +99,6 @@
 <section class="min-h-screen flex flex-col items-center justify-center p-4">
     <h2 class="title-font text-center">Voyages et Festivals</h2>
     <p class="subtitle-font text-center max-w-lg fade-in-section">Ensemble, nous avons exploré des festivals incroyables comme le Brunch Electronique et l'Initial Festival à Bordeaux. Tes rires et ton amour pour la musique techno ont rendu ces moments inoubliables.</p>
-    <img src="https://example.com/path-to-festival.jpg" alt="Festival" class="mx-auto rounded-lg shadow-lg max-w-xs md:max-w-sm lg:max-w-lg">
 </section>
 
 <div class="separator"></div>
@@ -82,7 +107,6 @@
 <section class="min-h-screen flex flex-col items-center justify-center p-4">
     <h2 class="title-font text-center">Art et Rires</h2>
     <p class="subtitle-font text-center max-w-lg fade-in-section">Ton amour pour l'art et ta capacité à trouver la joie dans chaque moment nous inspirent tous les jours.</p>
-    <img src="https://example.com/path-to-art.jpg" alt="Art" class="mx-auto rounded-lg shadow-lg max-w-xs md:max-w-sm lg:max-w-lg">
 </section>
 
 <div class="separator"></div>
@@ -93,15 +117,38 @@
     <p class="subtitle-font text-center max-w-lg fade-in-section">Pour tout l'amour, les rires et les aventures que tu apportes dans ma vie. Joyeux anniversaire, ma Puce!</p>
 </section>
 
-<img src="img/lv_brunch_electronik.jpg" />
-<img src="img/lv_casino.jpg" />
-<img src="img/lv_enfant_disparu.jpg" />
-<img src="img/lv_frange.jpg" />
-<img src="img/lv_langue.jpg" />
-<img src="img/lv_lego.jpg" />
-<img src="img/lv_mere_noel.jpg" />
-<img src="img/lv_pirate.jpg" />
-<img src="img/lv_visite_grotte_happy.jpg" />
+<!-- Carousel -->
+<div class="carousel">
+    <div class="carousel-inner" id="carouselInner">
+        <div class="carousel-item">
+            <img src="img/lv_brunch_electronik.jpg" alt="Brunch Electronique">
+        </div>
+        <div class="carousel-item">
+            <img src="img/lv_casino.jpg" alt="Casino">
+        </div>
+        <div class="carousel-item">
+            <img src="img/lv_enfant_disparu.jpg" alt="Enfant Disparu">
+        </div>
+        <div class="carousel-item">
+            <img src="img/lv_frange.jpg" alt="Frange">
+        </div>
+        <div class="carousel-item">
+            <img src="img/lv_langue.jpg" alt="Langue">
+        </div>
+        <div class="carousel-item">
+            <img src="img/lv_lego.jpg" alt="Lego">
+        </div>
+        <div class="carousel-item">
+            <img src="img/lv_mere_noel.jpg" alt="Mère Noël">
+        </div>
+        <div class="carousel-item">
+            <img src="img/lv_pirate.jpg" alt="Pirate">
+        </div>
+        <div class="carousel-item">
+            <img src="img/lv_visite_grotte_happy.jpg" alt="Visite Grotte Happy">
+        </div>
+    </div>
+</div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -121,6 +168,22 @@
         fadeInSections.forEach(section => {
             appearOnScroll.observe(section);
         });
+
+        // Carousel functionality
+        const carouselInner = document.getElementById('carouselInner');
+        const items = document.querySelectorAll('.carousel-item');
+        let currentIndex = 0;
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % items.length;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        setInterval(nextSlide, 3000); // Change slide every 3 seconds
     });
 </script>
 </body>
