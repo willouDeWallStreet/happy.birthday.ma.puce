@@ -12,23 +12,31 @@
             background-color: black;
             color: white;
         }
-
-        .title-font {
+        .title-page-font {
             font-family: 'Playfair Display', serif;
-            font-size: 56px;
-            line-height: 60px;
-            font-weight: 600;
+            font-size: 5em;
+            line-height: 3em;
+            font-weight: 900;
             color: rgba(0, 0, 0, 0);
             background: linear-gradient(to right, #FF99C8, #FFFFFF);
             -webkit-background-clip: text;
             background-clip: text;
         }
-
+        .title-font {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            line-height: 3em;
+            font-weight: 900;
+            color: rgba(0, 0, 0, 0);
+            background: linear-gradient(to right, #FF99C8, #FFFFFF);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
         .subtitle-font {
-            font-family: 'Roboto', sans-serif;
-            font-size: 32px;
-            line-height: 36px;
-            font-weight: 600;
+            font-family: font-serif;
+            font-size: 1.5em;
+            line-height: 1.5em;
+            font-weight: 350;
             color: rgb(206, 206, 206);
         }
 
@@ -102,40 +110,17 @@
     </style>
 </head>
 <body>
-<!-- Sections remain unchanged -->
 <!-- Section 1: Introduction -->
 <section class="min-h-screen flex flex-col items-center justify-center p-4">
-    <h1 class="title-font text-center">Joyeux Anniversaire, ma Puce!</h1>
-    <p class="subtitle-font text-center max-w-lg fade-in-section is-visible">Bienvenue sur cette page spéciale pour toi, Ludivine. Découvre ce que j'ai préparé pour ton anniversaire.</p>
+    <h1 class="title-page-font text-center">Joyeux Anniversaire</h1>
+    <p class="subtitle-font text-center max-w-lg fade-in-section is-visible">Bienvenue sur cette page spéciale pour toi, Ludivine. Découvre ce que j'ai modestement préparé pour ton anniversaire.</p>
 </section>
-
 <div class="separator"></div>
-
-<!-- Section 2: Danse et Ballets -->
 <section class="min-h-screen flex flex-col items-center justify-center p-4">
-    <h2 class="title-font text-center">Danse et Ballets</h2>
-    <p class="subtitle-font text-center max-w-lg fade-in-section">Tu aimes la danse et les ballets, et c'est une passion qui te rend unique et élégante.</p>
+    <h2 class="title-font text-center">Pour la reine que tu es, un week-end de rêve</h2>
+    <p class="subtitle-font text-center max-w-lg fade-in-section">Objectifs: Amusement, rire et nouveaux souvenirs</p>
 </section>
-
 <div class="separator"></div>
-
-<!-- Section 3: Voyages et Festivals -->
-<section class="min-h-screen flex flex-col items-center justify-center p-4">
-    <h2 class="title-font text-center">Voyages et Festivals</h2>
-    <p class="subtitle-font text-center max-w-lg fade-in-section">Ensemble, nous avons exploré des festivals incroyables comme le Brunch Electronique et l'Initial Festival à Bordeaux. Tes rires et ton amour pour la musique techno ont rendu ces moments inoubliables.</p>
-</section>
-
-<div class="separator"></div>
-
-<!-- Section 4: Art et Rires -->
-<section class="min-h-screen flex flex-col items-center justify-center p-4">
-    <h2 class="title-font text-center">Art et Rires</h2>
-    <p class="subtitle-font text-center max-w-lg fade-in-section">Ton amour pour l'art et ta capacité à trouver la joie dans chaque moment nous inspirent tous les jours.</p>
-</section>
-
-<div class="separator"></div>
-
-<!-- Combined Section: Conclusion and Carousel -->
 <section class="min-h-screen flex flex-col items-center justify-center p-4">
     <h1 class="title-font text-center">Merci d'être toi</h1>
     <p class="subtitle-font text-center max-w-lg fade-in-section mb-8">Pour tout l'amour, les rires et les aventures que tu apportes dans ma vie. Joyeux anniversaire, ma Puce!</p>
@@ -200,7 +185,6 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const fadeInSections = document.querySelectorAll('.fade-in-section');
-
         const appearOnScroll = new IntersectionObserver(function(entries, observer) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -211,7 +195,6 @@
         }, {
             threshold: 0.1
         });
-
         fadeInSections.forEach(section => {
             appearOnScroll.observe(section);
         });
