@@ -45,6 +45,13 @@
             font-weight: 250;
             color: rgb(206, 206, 206);
         }
+        .subtitle-font-mystery {
+            font-family: 'Playfair Display', font-serif;
+            font-size: 0.65em;
+            line-height: 1.1em;
+            font-weight: 250;
+            color: rgb(206, 206, 206);
+        }
         .fade-in-section {
             opacity: 0;
             transform: translateY(20px);
@@ -77,10 +84,17 @@
         }
         .img-section {
             flex: 0 0 auto;
-            width: 20rem;
-            height: 20rem;
+            width: 15rem;
+            height: 15rem;
             position: relative;
             cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .img-section img {
+            /*width: 100%;*/
+            height: 12rem;
         }
         .carousel-item {
             flex: 0 0 auto;
@@ -154,7 +168,7 @@
 <body>
 <!-- Section 1: Introduction -->
 <section class="min-h-screen flex flex-col items-center justify-center p-4">
-    <h1 class="title-page-font text-center">Joyeux Anniversaire</h1>
+    <h1 class="title-page-font text-center">JOYEUX ANNIVERSAIRE</h1>
     <p class="subtitle-font text-center max-w-lg fade-in-section is-visible">Ma puce, mon amour, ma chérie, ma <b style="color: #ff7f00">vie</b> !</p>
 </section>
 <div class="separator"></div>
@@ -167,11 +181,13 @@
     <h2 class="title-font text-center">Nancy</h2>
     <p class="subtitle-font text-center max-w-lg fade-in-section"></p>
     <div class="grid grid-cols-3 gap-4">
-        <div class="col-span-2">
+        <div class="col-span-1">
             <div class="img-section" onclick="openModal('img/hotel-plage.jpg')">
                 <img src="img/hotel-plage.jpg" alt="hotel-plage">
                 <div class="gradient-overlay"></div>
             </div>
+        </div>
+        <div class="col-span-1">
             <div class="img-section" onclick="openModal('img/hotel_tour_eiffel.jpg')">
                 <img src="img/hotel_tour_eiffel.jpg" alt="hotel_tour_eiffel">
                 <div class="gradient-overlay"></div>
@@ -182,16 +198,23 @@
 </section>
 <div class="separator"></div>
 <section class="min-h-screen flex flex-col items-center justify-center p-4">
+    <h2 class="title-font text-center">Nuit 2 : Mystère...</h2>
+    <p class="subtitle-font-mystery text-center max-w-lg fade-in-section ">(je n'ai pas encore réservé 🤫)</p>
+</section>
+<div class="separator"></div>
+<section class="min-h-screen flex flex-col items-center justify-center p-4">
     <h2 class="title-font text-center">Europa-Park</h2>
     <p class="subtitle-font text-center max-w-lg fade-in-section"></p>
-    <div class="grid grid-cols-3 gap-4">
-        <div class="col-span-2">
+    <div class="grid grid-cols-2 gap-4">
+        <div>
             <div class="img-section" onclick="openModal('img/europa_park_2.jpg')">
                 <img src="img/europa_park_2.jpg" alt="europa-park">
                 <div class="gradient-overlay"></div>
             </div>
         </div>
-        <div class="col-span-1"></div>
+        <div>
+
+        </div>
     </div>
 </section>
 <div class="separator"></div>
