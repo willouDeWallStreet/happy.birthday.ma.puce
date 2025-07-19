@@ -19,7 +19,7 @@
             margin-top: -150px;
             margin-bottom: 1em;
             font-family: 'Playfair Display', serif;
-            font-size: 3.5em;
+            font-size: 3.25em;
             line-height: 1.5em;
             font-weight: 900;
             color: rgba(0, 0, 0, 0);
@@ -28,6 +28,7 @@
             background-clip: text;
         }
         .title-font {
+            margin-top: -250px;
             margin-bottom: 1em;
             font-family: 'Playfair Display', serif;
             font-size: 2.5em;
@@ -48,6 +49,13 @@
         .subtitle-font-mystery {
             font-family: 'Playfair Display', font-serif;
             font-size: 0.65em;
+            line-height: 1.1em;
+            font-weight: 250;
+            color: rgb(206, 206, 206);
+        }
+        .description-img {
+            font-family: 'Didot', font-serif;
+            font-size: 1.1em;
             line-height: 1.1em;
             font-weight: 250;
             color: rgb(206, 206, 206);
@@ -84,8 +92,8 @@
         }
         .img-section {
             flex: 0 0 auto;
-            width: 15rem;
-            height: 15rem;
+            /*width: 15rem;
+            height: 15rem;*/
             position: relative;
             cursor: pointer;
             display: flex;
@@ -94,7 +102,7 @@
         }
         .img-section img {
             /*width: 100%;*/
-            height: 12rem;
+            height: 7.5rem;
         }
         .carousel-item {
             flex: 0 0 auto;
@@ -169,7 +177,7 @@
 <!-- Section 1: Introduction -->
 <section class="min-h-screen flex flex-col items-center justify-center p-4">
     <h1 class="title-page-font text-center">JOYEUX ANNIVERSAIRE</h1>
-    <p class="subtitle-font text-center max-w-lg fade-in-section is-visible">Ma puce, mon amour, ma chérie, ma <b style="color: #ff7f00">vie</b> !</p>
+    <p class="subtitle-font text-center max-w-lg fade-in-section is-visible">À ma puce, mon amour, ma chérie, ma <b style="color: #ff7f00">vie</b> !</p>
 </section>
 <div class="separator"></div>
 <section class="min-h-screen flex flex-col items-center justify-center p-4">
@@ -178,20 +186,36 @@
 </section>
 <div class="separator"></div>
 <section class="min-h-screen flex flex-col items-center justify-center p-4">
-    <h2 class="title-font text-center">Nancy</h2>
+    <h2 class="title-font text-center">Nuit 1 : Nancy</h2>
     <p class="subtitle-font text-center max-w-lg fade-in-section"></p>
-    <div class="grid grid-cols-3 gap-4">
-        <div class="col-span-1">
-            <div class="img-section" onclick="openModal('img/hotel-plage.jpg')">
-                <img src="img/hotel-plage.jpg" alt="hotel-plage">
+    <div class="grid grid-cols-10 gap-2">
+        <div class="col-span-6">
+            <div class="img-section" onclick="openModal('img/golden-gate.jpg')">
+                <img src="img/golden-gate.jpg" alt="Golden gate">
                 <div class="gradient-overlay"></div>
             </div>
         </div>
-        <div class="col-span-1">
-            <div class="img-section" onclick="openModal('img/hotel_tour_eiffel.jpg')">
-                <img src="img/hotel_tour_eiffel.jpg" alt="hotel_tour_eiffel">
+        <div class="col-span-4">
+            <div class="img-section" onclick="openModal('img/tour-eiffel.jpg')">
+                <img src="img/tour-eiffel.jpg" alt="Tour eiffel">
                 <div class="gradient-overlay"></div>
             </div>
+        </div>
+        <div class="col-span-6">
+            <div class="img-section" onclick="openModal('img/machu-picchu.jpg')">
+                <img src="img/machu-picchu.jpg" alt="Machu picchu">
+                <div class="gradient-overlay"></div>
+            </div>
+        </div>
+        <div class="col-span-4">
+            <div class="img-section" onclick="openModal('img/grande-muraille-chine.jpg')">
+                <img src="img/grande-muraille-chine.jpg" alt="Grande muraille chine">
+                <div class="gradient-overlay"></div>
+            </div>
+        </div>
+        <div class="col-span-1"></div>
+        <div class="col-span-8">
+            <p class="description-img">Pour notre week-end à Nancy, j'ai préparé quelques photos des lieux qu'on va visiter. Regarde, cette belle tour de fer, c'est sûrement le point de repère principal de la ville ! Et ce grand pont rouge, je suis sûr qu'on va le traverser. J'ai aussi entendu dire qu'il y a une vieille muraille et des ruines incas pas loin du centre-ville.</p>
         </div>
         <div class="col-span-1"></div>
     </div>
@@ -203,7 +227,7 @@
 </section>
 <div class="separator"></div>
 <section class="min-h-screen flex flex-col items-center justify-center p-4">
-    <h2 class="title-font text-center">Europa-Park</h2>
+    <h2 class="title-font text-center" style="font-size: 2.15em;line-height: 1.15em;">Jour 3 : Europa-Park</h2>
     <p class="subtitle-font text-center max-w-lg fade-in-section"></p>
     <div class="grid grid-cols-2 gap-4">
         <div>
@@ -212,14 +236,12 @@
                 <div class="gradient-overlay"></div>
             </div>
         </div>
-        <div>
-
-        </div>
+        <div></div>
     </div>
 </section>
 <div class="separator"></div>
 <section class="min-h-screen flex flex-col items-center justify-center p-4">
-    <h1 class="title-font text-center">Merci d'être toi</h1>
+    <h1 class="title-font text-center" style="margin-top: -0px;">Merci d'être toi</h1>
     <p class="subtitle-font text-center max-w-lg fade-in-section mb-8">Pour tout l'amour, les rires et les aventures que tu apportes dans nos vies. Joyeux anniversaire, ma puce !</p>
     <div class="carousel-container">
         <div class="carousel">
