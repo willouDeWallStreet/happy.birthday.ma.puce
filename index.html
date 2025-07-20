@@ -6,6 +6,8 @@
     <title>Dance dance dance</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Dosis:wght@200..800&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playwrite+AU+SA:wght@100..400&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -28,7 +30,7 @@
             background-clip: text;
         }
         .title-font {
-            margin-top: -250px;
+            margin-top: -50px;
             margin-bottom: 1em;
             font-family: 'Playfair Display', serif;
             font-size: 2.5em;
@@ -54,8 +56,11 @@
             color: rgb(206, 206, 206);
         }
         .description-img {
-            font-family: 'Didot', font-serif;
-            font-size: 1.1em;
+            text-align: center;
+            text-justify: inter-word;
+            margin-top: 2em;
+            font-family: "EB Garamond", cursive;
+            font-size: 1.4em;
             line-height: 1.1em;
             font-weight: 250;
             color: rgb(206, 206, 206);
@@ -197,7 +202,7 @@
         </div>
         <div class="col-span-4">
             <div class="img-section" onclick="openModal('img/tour-eiffel.jpg')">
-                <img src="img/tour-eiffel.jpg" alt="Tour eiffel">
+                <img style="width: 120px;" src="img/tour-eiffel.jpg" alt="Tour eiffel">
                 <div class="gradient-overlay"></div>
             </div>
         </div>
@@ -215,7 +220,8 @@
         </div>
         <div class="col-span-1"></div>
         <div class="col-span-8">
-            <p class="description-img">Pour notre week-end à Nancy, j'ai préparé quelques photos des lieux qu'on va visiter. Regarde, cette belle tour de fer, c'est sûrement le point de repère principal de la ville ! Et ce grand pont rouge, je suis sûr qu'on va le traverser. J'ai aussi entendu dire qu'il y a une vieille muraille et des ruines incas pas loin du centre-ville.</p>
+            <p class="description-img">Pour notre week-end à Nancy, j'ai préparé quelques photos des lieux qu'on va visiter. Une très belle tour de fer, en haut il doit y avoir une vue magnifique sur la Place Stanislas ! Ce grand pont rouge, comme à Lyon, j'aimerais beaucoup le traverser. J'ai même entendu dire qu'il y a une vieille muraille et des ruines incas pas loin du centre-ville.</p>
+            <p class="description-img">😝</p>
         </div>
         <div class="col-span-1"></div>
     </div>
@@ -229,15 +235,15 @@
 <section class="min-h-screen flex flex-col items-center justify-center p-4">
     <h2 class="title-font text-center" style="font-size: 2.15em;line-height: 1.15em;">Jour 3 : Europa-Park</h2>
     <p class="subtitle-font text-center max-w-lg fade-in-section"></p>
-    <div class="grid grid-cols-2 gap-4">
-        <div>
+    <div class="grid grid-cols-10">
+        <div class="col-span-10">
             <div class="img-section" onclick="openModal('img/europa_park_2.jpg')">
-                <img src="img/europa_park_2.jpg" alt="europa-park">
+                <img src="img/europa_park_2.jpg" alt="Europa park">
                 <div class="gradient-overlay"></div>
             </div>
         </div>
-        <div></div>
     </div>
+
 </section>
 <div class="separator"></div>
 <section class="min-h-screen flex flex-col items-center justify-center p-4">
